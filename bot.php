@@ -53,6 +53,6 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OKx event see 55";
+echo "OKx event see 5 $testx 5";
 ?>
 
