@@ -22,21 +22,21 @@ if (!is_null($events['events'])) {
             			'data'=> 'action=buy&itemid=123'
 			  },
 			  {
-			    "type": "postback",
-			    "label": "Add to cart",
-			    "data": "action=add&itemid=123"
+			   'type'=> 'postback',
+            		   'label'=> 'Buy',
+			   'data'=> 'action=add&itemid=123'
 			  },
 			  {
-			    "type": "uri",
-			    "label": "View detail",
-			    "uri": "http://example.com/page/123"
+			    'type'=> 'uri',
+			    'label'=> 'View detail',
+			    'uri'=> 'http://example.com/page/123'
 			  }
 			];
 			
-			$messages = [
-				'type' => 'confirm',
+			$tmp = [
+				'type' => 'buttons',
 				'thumbnailImageUrl' => 'http://nexceris.com/wp-content/uploads/2014/04/bokeh-cover-bg.jpg',
-			        'title': 'Menu',
+			        'title'=> 'Menu',
 				'text'=> 'Are you sure?',
 				'actions' => [$aactions]
 			];
@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'template' => [$messages],
+				'template' => [$tmp],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
