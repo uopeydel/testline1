@@ -15,7 +15,8 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$usename = $event['source'];
+			$usename = $event['source']['type'];
+			$usid =  $event['source']['userId'];
 			$tmps ='{
 			  "type": "template",
 			  "altText": "this is a buttons template",
@@ -48,7 +49,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => $usename
+				'messages' => $usename.'non'.$usid
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
