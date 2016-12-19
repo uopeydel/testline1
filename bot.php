@@ -16,11 +16,10 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			
-			$aactions = [{
+			$aactions = [
 				'type'=> 'message',
             			'label'=> 'Buy',
             			'text'=> 'yes'
-			  }
 			];
 			
 			$tmp = [
