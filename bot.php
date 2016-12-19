@@ -21,7 +21,7 @@ if (!is_null($events['events'])) {
 			  "altText": "this is a buttons template",
 			  "template": {
 			      "type": "buttons",
-			      "thumbnailImageUrl": "https://example.com/bot/images/image.jpg",
+			      "thumbnailImageUrl": "http://nexceris.com/wp-content/uploads/2014/04/bokeh-cover-bg.jpg",
 			      "title": "Menu",
 			      "text": "Please select",
 			      "actions": [
