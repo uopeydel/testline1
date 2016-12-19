@@ -17,16 +17,14 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			
 			$aactions = [{
-				'type'=> 'postback',
+				'type'=> 'message',
             			'label'=> 'Buy',
-            			'data'=> 'action=buy&itemid=123'
+            			'text'=> 'yes'
 			  }
 			];
 			
 			$tmp = [
-				'type' => 'buttons',
-				'thumbnailImageUrl' => 'http://nexceris.com/wp-content/uploads/2014/04/bokeh-cover-bg.jpg',
-			        'title'=> 'Menu',
+				'type' => 'confirm', 
 				'text'=> 'Are you sure?',
 				'actions' => [$aactions]
 			];
@@ -35,7 +33,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'template' => [$tmp],
+				'template' => [$tmp]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
