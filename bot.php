@@ -4,6 +4,9 @@ $access_token = 'kqJHzsi56OH56WLEq+29E0HoCR7sI/ddKh9CuSfHB/ENK/PSFTRW+pQRg5L7dRB
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+
+
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -15,6 +18,29 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
+			
+			if($text == "1")
+			{
+				$messages1 = [
+					'type' => 'text',
+					'text' => '1k'
+				];
+				$url1 = 'https://api.line.me/v2/bot/message/push';
+				$data1 = [
+					'to' => 'U83670cc497f32dcba4e722be89893a6e',
+					'messages' => [$messages1],
+				];
+				$post1 = json_encode($data1);
+				$headers1 = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$ch1 = curl_init($url1);
+				curl_setopt($ch1, CURLOPT_CUSTOMREQUEST, "POST");
+				curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch1, CURLOPT_POSTFIELDS, $post1);
+				curl_setopt($ch1, CURLOPT_HTTPHEADER, $headers1);
+				curl_setopt($ch1, CURLOPT_FOLLOWLOCATION, 1);
+				$result1 = curl_exec($ch1);
+				curl_close($ch1);
+			}
 			
 			$messages = [
 				'type' => 'text',
@@ -41,5 +67,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "a OK";
+echo "aa OK b cc";
 ?>
