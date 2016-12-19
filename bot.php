@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'text',
-				'text' => $text.' ที่ป้อนมา'
+				'text' => $text.' ที่ป้อนมา'.$event['source']['userId']
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
