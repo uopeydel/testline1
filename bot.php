@@ -16,16 +16,44 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			
-			$messages = [
-				'type' => 'text',
-				'text' => $text.' ที่ป้อนมา'
+			$action = [
+				{
+					"type" =>  "postback",
+					"label" =>  "Buy",
+					"data" =>  "action=buy&itemid=123"
+				},
+				{
+					"type" =>  "postback",
+					"label" =>  "Add to cart",
+					"data" =>  "action=add&itemid=123"
+				},
+				{
+					"type" =>  "uri",
+					"label" =>  "View detail",
+					"uri" =>  "http://example.com/page/123"
+				}
+			];
+			
+			
+			$aactions = [
+				'type' => 'buttons',
+				'thumbnailImageUrl' => 'https://devdocs.line.me/images/buttons.png',
+				'title' => 'Menu', 
+            			'text'=> 'Please select',
+				'actions' => [$action]
+			];
+			
+			$tmp = [
+				'type' => 'template', 
+				'text' => 'Are you sure?',
+				'template' => [$aactions]
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => [$tmp]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
