@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'text',
-				'text' => $text.' $replyToken {$replyToken} คือ'.$replyToken
+				'text' => $text.' $replyToken { $replyToken }  { $replyToken } คือ'.$replyToken
 			];
 	 	 
 			// Make a POST Request to Messaging API to reply to sender
