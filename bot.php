@@ -15,22 +15,15 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$usename = $event['source']['type'];
-			$usid =  $event['source']['userId'];
-			$sene = json_decode($event['source']['userId']);
 			
-			$testx ="";
-			if (!is_null($event['source']))
-			{
-				$testx = 'invis have';
-			}else
-			{
-				$testx = ' is  null ';
+			foreach($class as $key => $value) {
+			    print "$key => $value\n";
 			}
+			$se = get_object_vars($event);
 			 
 			$messages = [
 				'type' => 'text',
-				'text' => $testx
+				'text' => 'a'
 			];
 	 	 
 			// Make a POST Request to Messaging API to reply to sender
@@ -53,6 +46,6 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OKx event see 5 estx 5";
+echo "OK aaa";
 ?>
 
