@@ -17,8 +17,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			
 			$messages = [
-				'type' => 'text',
-				'text' => $text.' ที่ป้อนมา'
+				'type' => 'sticker',
+				'packageId' => "1",
+				'stickerId' => "1"
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
