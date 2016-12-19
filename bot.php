@@ -15,10 +15,18 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
+			
+			if (is_numeric( $text)) {
+        		$messages = [
+				'type' => 'text',
+				'text' => $text*6.' ค่า คูณหก ของเลขที่ป้อนมา'
+			];
+    			}else {
 			$messages = [
 				'type' => 'text',
-				'text' => $text.' ต่อข้อความ'
+				'text' => $text.' ข้อความนี้เป็นตัวอักษรนะ'
 			];
+			}
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
