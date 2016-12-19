@@ -19,10 +19,18 @@ if (!is_null($events['events'])) {
 			$usid =  $event['source']['userId'];
 			$sene = json_decode($event['source']['userId']);
 			
+			$testx ="";
+			if (!is_null($event['source']))
+			{
+				$testx = 'invis have';
+			}else
+			{
+				$testx = ' is  null ';
+			}
 			 
 			$messages = [
 				'type' => 'text',
-				'text' => 'name '.$sene
+				'text' => $testx
 			];
 	 	 
 			// Make a POST Request to Messaging API to reply to sender
