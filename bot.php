@@ -16,12 +16,16 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			
+			$messages = [
+				'type' => 'text',
+				'text' => $text.' ค่า คูณหก ของเลขที่ป้อนมา'
+			];
 			if (is_numeric( $text)) {
         		$messages = [
 				'type' => 'text',
 				'text' => $text*6.' ค่า คูณหก ของเลขที่ป้อนมา'
 			];
-    			}else {
+    			} else {
 			$messages = [
 				'type' => 'text',
 				'text' => $text.' ข้อความนี้เป็นตัวอักษรนะ'
