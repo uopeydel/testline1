@@ -65,6 +65,6 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OKx$event";
+echo "OKx event";
 ?>
 
