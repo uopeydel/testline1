@@ -47,7 +47,7 @@ if (!is_null($events['events'])) {
 				$messages1 = [
 					'type' => 'template',
 					'altText' => 'this is a buttons template',
-					'template' => []
+					'template' => [$jtemplate]
 				];
 				$url1 = 'https://api.line.me/v2/bot/message/push';
 				$data1 = [
@@ -91,5 +91,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "aa OK b cc";
+echo "aa OK b cc dd";
 ?>
