@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>My First JavaScript 011</h1>
+<h1>My First JavaScript 012</h1>
 
 <button type="button" onclick="onClickBTN()"> Click me </button>
 
@@ -23,10 +23,10 @@ function onClickBTN(){
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", 'https://api.line.me/v2/bot/message/push', true);
 	xhr.setRequestHeader(headd);
-	xhr.send(JSON.stringify({
+	/*xhr.send(JSON.stringify({
 	    data: dat
-	}));
-	//xhr.send(datapost);
+	}));*/
+	xhr.send(datapost);
 }
 </script> 
 </body>
