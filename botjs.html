@@ -38,7 +38,7 @@ function onClickBTN(){
 	}
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", 'https://api.line.me/v2/bot/message/push', true);
-	xhr.setRequestHeader('Content-Type : application/json' , 'Authorization : Bearer'+access_token);
+	xhr.setRequestHeader(headd);
 	xhr.send(JSON.stringify({
 	    data: dat
 	}));
@@ -48,7 +48,7 @@ function onClickBTN(){
 </header>
 <body>
 
-<h1>My First JavaScript 007</h1>
+<h1>My First JavaScript 008</h1>
 
 <button type="button" onclick="onClickBTN()"> Click me </button>
 
