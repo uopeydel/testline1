@@ -27,7 +27,11 @@ if (!is_null($events['events'])) {
 			      "actions": [
 				  {
 				    "type": "postback",
-				    "label": "Buy",
+				    "label": 
+				    　 {
+				          "type":"image",
+					  "previewImageUrl":"http://pngimg.com/upload/star_PNG1597.png"
+				    　 },
 				    "data": "action=buy&itemid=123"
 				  },
 				  {
