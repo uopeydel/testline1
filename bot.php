@@ -16,37 +16,42 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			
-			$tmps ='{
-			  "type": "template",
-			  "altText": "this is a buttons template",
-			  "template": {
-			      "type": "buttons",
-			      "thumbnailImageUrl": "https://pbs.twimg.com/profile_images/664342624082526208/VH-iVYvv.jpg",
-			      "title": "Menu",
-			      "text": "Please select",
-			      "actions": [
-				  {
-				    "type": "postback",
-				    "label": 
-				    　 {
-				          "type":"image",
-					  "previewImageUrl":"http://pngimg.com/upload/star_PNG1597.png"
-				    　 },
-				    "data": "action=buy&itemid=123"
-				  },
-				  {
-				    "type": "postback",
-				    "label": "Add to cart",
-				    "data": "action=add&itemid=123"
-				  },
-				  {
-				    "type": "uri",
-				    "label": "View detail",
-				    "uri": "http://example.com/page/123"
-				  }
-			      ]
-			  }
-			}';
+			$tmps = '{
+				"type": "imagemap",
+				"altText": "this is a buttons template",
+				"baseUrl": "https://pbs.twimg.com/profile_images/664342624082526208/VH-iVYvv.jpg",
+				"baseSize": {
+				    "height": 1040,
+				    "width": 1040
+				},
+				"actions": {
+				    "type": "buttons",
+				    "thumbnailImageUrl": "https://pbs.twimg.com/profile_images/664342624082526208/VH-iVYvv.jpg",
+				    "title": "Menu",
+				    "text": "Please select",
+				    "actions": [{
+					"type": "uri",
+					"linkUri": "www.google.com",
+					"area": 　{
+					    "x": 0,
+					    "y": 0,
+					    "width": 500,
+					    "height": 500　
+					}
+				    }, {
+					"type": "message",
+					"text": "hello",
+					"area": {
+					    "x": 520,
+					    "y": 0,
+					    "width": 520,
+					    "height": 1040
+					}
+				    }]
+				}
+				}
+				';
+
 	 	 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
