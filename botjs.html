@@ -28,7 +28,7 @@ function onClickBTN(){
     };
 
 	var autho = 'Bearer'+access_token;
-	var headd = {'Content-Type': 'application/json' , 'Authorization': 'Bearer'+access_token} ;
+	var headd = {'Content-Type': 'application/json' }, {'Authorization': 'Bearer'+access_token} ;
 	var dat = {
             'to' : 'U83670cc497f32dcba4e722be89893a6e',
             'messages': {
@@ -48,7 +48,7 @@ function onClickBTN(){
 </header>
 <body>
 
-<h1>My First JavaScript 008</h1>
+<h1>My First JavaScript 009</h1>
 
 <button type="button" onclick="onClickBTN()"> Click me </button>
 
